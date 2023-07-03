@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let funA = function () {
+            let i = Math.random();
+            setTimeout(() => {
+                console.log('function A', 'Ai1:' + i);  //慢i秒
+            }, i * 10000)
+            //console.log('Ai2:' + i);  --> 立即執行，i1=i2
+        };
+        let funB = function () {
+            let i = Math.random();
+            setTimeout(() => {
+                console.log('function B', 'Bi1:' + i);
+            }, i * 10000)
+
+        }
+
+        funA();
+        funB();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // URL
+      const url = new URL("https://google.com?a=10&b=apple&c=123");
+      console.log("url:", url);
+      const myParams = url.searchParams;
+      console.log("myParams:", myParams);
+
+      //URLSearchParams
+      const url2 = new URLSearchParams();
+      console.log("url2:", url2);
+    </script>
+  </body>
+</html>

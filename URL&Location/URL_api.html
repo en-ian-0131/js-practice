@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="info"></div>
+    <script>
+      const info = document.querySelector("#info");
+      const url = new URL("https://google.com?a=10&b=apple&#c=123&#home&");
+
+      console.log("href:", url.href); //https://google.com?a=10&b=apple&#c=123
+      console.log("protocol:", url.protocol); //https:
+      console.log("host:", url.host); //google.com
+      console.log("hostname:", url.hostname); //google.com
+      console.log("port:", url.port);
+      console.log("path:", url.path);
+      console.log("search:", url.search); //?a=10&b=apple&
+      console.log("hash:", url.hash); //#c=123&#home
+      console.log("username:", url.username);
+      console.log("password:", url.password);
+      console.log("origin:", url.origin); //https://google.com
+      console.log("searchParams:", url.searchParams); //URLSearchParams {size:2}
+      info.innerHTML = url;
+    </script>
+  </body>
+</html>

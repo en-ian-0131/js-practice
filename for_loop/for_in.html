@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 遍歷陣列
+      const p1 = ["A", "B", "C", "D", "E", "F"];
+
+      for (let key in p1) {
+        console.log("p1 key:", key);
+      }
+      console.log("---------");
+      // 遍歷物件
+      const p2 = { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6 };
+      for (let key in p2) {
+        console.log("p2 key:", key);
+      }
+      console.log("---------");
+      const p3 = [{ a: 1 }, { b: 2 }, { c: 3 }, { d: 4 }, { e: 5 }, { f: 6 }];
+      for (let key in p3) {
+        console.log("p3 key:", key);
+      }
+    </script>
+  </body>
+</html>

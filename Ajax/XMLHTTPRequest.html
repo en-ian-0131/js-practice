@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="doload()">Click</button>
+    <div id="info"></div>
+
+    <script>
+      const info = document.querySelector("#info");
+      function doload() {
+        console.log("---1---");
+        const xhr = new XMLHttpRequest();
+
+        // 監聽readyState次數
+        // xhr.onreadystatechange = () => {
+        //   console.log(xhr.response);
+        // };
+
+        // 一般讀取
+        xhr.onload = () => {
+          console.log("---2---");
+          console.log(xhr.response);
+          const data = xhr.response;
+          display(data);
+        };
+        console.log("---3---");
+        xhr.open("get", "../Data/Phone.json", true);
+        console.log("---4---");
+        xhr.send();
+      }
+
+      const display = function (data) {
+        data = JSON.parse(data);
+        // info.innerHTML = data.map((v, i) => {
+        //   return `<div>
+        //     <span>Name:${v.name}</span>
+        //     <span>price:${v.price}</span>
+        //     <div>img: <img src="${v.img}" alt="" width="200px"/></div>
+        //     </div>`;
+        // });
+        for (let i = 0; i < data.length; i++) {
+          console.log(data[i]);
+          info.innerHTML += `<div>
+            <span>Name:${data[i].name}</span>
+            <span>price:${data[i].price}</span>
+            <div>img: <img src="${data[i].img}" alt="" width="200px"/></div>
+        </div>`;
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div id="info"></div>
+      <button onclick="originSort()">原本</button>
+      <button onclick="ageASC()">年齡由小排到大</button>
+      <button onclick="ageDESC()">年齡由大排到小</button>
+    </div>
+    <script>
+      const people = [
+        { name: "David", age: 25, gender: "male" },
+        { name: "Jennie", age: 20, gender: "female" },
+        { name: "Ian", age: 18, gender: "male" },
+        { name: "Joyboy", age: 30, gender: "male" },
+        { name: "Marry", age: 17, gender: "female" },
+      ];
+      const info = document.querySelector("#info");
+
+      const renderContent = function (arr) {
+        const data = arr.map((v, i) => {
+          return `<div class="alert ${
+            v.gender === "male" ? "alert-primary" : "alert-danger"
+          }" role="alert">
+          名字:${v.name} 年齡:${v.age}
+          </div>`;
+        });
+        info.innerHTML = data.join("");
+      };
+      renderContent(people);
+
+      function originSort() {
+        renderContent(people);
+      }
+      function ageASC() {
+        const p = [...people];
+        p.sort(function (a, b) {
+          return a.age - b.age;
+        });
+        renderContent(p);
+      }
+
+      function ageDESC() {
+        const p = [...people];
+        p.sort(function (a, b) {
+          return b.age - a.age;
+        });
+        renderContent(p);
+      }
+    </script>
+  </body>
+</html>

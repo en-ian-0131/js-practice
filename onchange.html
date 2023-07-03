@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>onchange</title>
+  </head>
+  <body>
+    <div>請選擇名字</div>
+    <!-- <input type="text" name="urname" id="urname" onchange="inputname()" /> -->
+    <select name="urname" id="urname" onchange="inputname()">
+      <option>John</option>
+      <option>Mike</option>
+      <option>Ian</option>
+    </select>
+    <script>
+      const n = document.querySelector("#urname");
+      function inputname() {
+        alert("hello~ " + n.value);
+      }
+    </script>
+  </body>
+</html>

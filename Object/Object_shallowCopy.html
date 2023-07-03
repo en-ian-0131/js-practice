@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const p1 = {
+        name: "Ian",
+        age: 26,
+        gender: "male",
+      };
+
+      const p3 = { ...p1 };
+      console.log("p3=p1?", p3 === p1);
+
+      p1.age = 32;
+      p3.gender = "female";
+      console.log("p1:", p1);
+      console.log("p3:", p3);
+    </script>
+  </body>
+</html>

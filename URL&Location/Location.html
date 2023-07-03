@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="checkLocation()">Check</button>
+    <button onclick="toYahoo()">Yahoo</button>
+    <button onclick="toAirbnb()">Airbnb</button>
+    <button onclick="toReload()">Reload</button>
+    <button onclick="toReplace()">Youtube</button>
+    <script>
+      function checkLocation() {
+        console.log("href:", location.href);
+        console.log("hostname:", location.hostname);
+        console.log("pathname:", location.pathname);
+        console.log("search:", location.search);
+        console.log("hash:", location.hash);
+      }
+
+      function toYahoo() {
+        location.assign("https://tw.yahoo.com/");
+      }
+      function toAirbnb() {
+        location.href = "https://www.airbnb.com.tw/";
+      }
+      function toReload() {
+        location.reload();
+      }
+      //跳頁面不能按上一頁
+      function toReplace() {
+        location.replace("https://www.youtube.com/");
+      }
+    </script>
+  </body>
+</html>

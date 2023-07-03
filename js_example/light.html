@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <style>
+    i {
+      font-size: 100px;
+    }
+  </style>
+  <body>
+    <i class="fa-solid fa-lightbulb"></i>
+    <button id="lightButton" onclick="turn()">關</button>
+    <script>
+      let state = false;
+
+      const lightButton = document.querySelector("#lightButton");
+      const icon = document.querySelector(".fa-solid");
+      function turn() {
+        state = !state;
+        console.log(state);
+        lightButton.innerHTML = state ? "開" : "關";
+        icon.style.color = state ? "rgb(255, 225, 0)" : "";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="doload()">Click</button>
+    <div id="info"></div>
+    <script>
+      const info = document.querySelector("#info");
+      async function doload() {
+        const response = await axios
+          .get("../Data/Phone.json")
+          .then((res) => res);
+        console.log("response:", response.data);
+        info.innerHTML = response.data
+          .map((v, i) => {
+            return `<div>
+                    <span>Name:${v.name}</span>
+                    <span>price:${v.price}</span>
+                    <div>img: <img src="${v.img}" alt="" width="200px"/></div>
+                    </div>`;
+          })
+          .join("");
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+  </body>
+</html>

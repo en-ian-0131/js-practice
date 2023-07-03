@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="info"></div>
+    <script>
+      const info = document.querySelector("#info");
+
+      let params = "https://yahoo.com?a=10&b=apple&c=123&a=654321";
+      let url = new URL("https://yahoo.com?a=10&b=apple&c=123&a=654321");
+      let usp = new URLSearchParams(url.search);
+
+      console.log("url:", url); //?a=10&b=apple&c=123&a=654321
+      console.log("usp:", usp); //URLSearchParams {size:4}
+      console.log("size:", usp.size); //4
+      console.log("has:", usp.has("b")); //true
+      console.log("get:", usp.get("b")); //apple
+      console.log("getAll:", usp.getAll("a")); //["10,""654321"]
+      console.log("toString:", usp.toString()); //a=10&b=apple&c=123&a=654321
+      console.log("-----------------------");
+      usp.entries();
+      console.log("toString-entries:", usp.toString());
+      usp.values();
+      console.log("toString-value:", usp.toString()); //a=10&b=apple&c=123&a=654321
+      usp.sort();
+      console.log("toString-sort:", usp.toString()); //a=10&a=654321&b=apple&c=123
+      usp.append("foo", 4);
+      console.log("toString-append:", usp.toString()); // a=10&b=apple&c=123&a=654321&foo=4
+      usp.set("name", "Ian");
+      console.log("toString-set:", usp.toString()); //a=10&b=apple&c=123&a=654321&foo=4&name=Ian
+      usp.delete("c");
+      console.log("toString-delete:", usp.toString()); // a=10&b=apple&a=654321&foo=4&name=Ian
+      info.innerHTML = usp.toString();
+    </script>
+  </body>
+</html>
