@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function block
+      function fn() {
+        var a = 1;
+        console.log(a); //1
+      }
+      fn();
+      //因為錯誤沒有被抓到，所以會出錯
+      console.log("a-after:", a); //undefined 出錯
+    </script>
+  </body>
+</html>
