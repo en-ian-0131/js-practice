@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const str1 = "23a";
+      const str2 = "a23";
+      const str3 = "23";
+      const str4 = "23.5";
+      console.log("parseInt");
+      console.log(parseInt(str1)); //23
+      console.log(parseInt(str2)); //NAN
+      console.log(parseInt(str3)); //23
+      console.log(parseInt(str4)); //23
+      console.log("--------------------");
+      console.log("Number");
+      console.log(Number(str1)); //NAN
+      console.log(Number(str2)); //NAN
+      console.log(Number(str3)); //23
+      console.log(Number(str4)); //23.5
+      console.log("--------------------");
+      console.log("+");
+      console.log(+str1); //NAN
+      console.log(+str2); //NAN
+      console.log(+str3); //23
+      console.log(+str4); //23.5
+      console.log("--------------------");
+      console.log("parseFloat");
+      console.log(parseFloat(str1)); //23
+      console.log(parseFloat(str2)); //NAN
+      console.log(parseFloat(str3)); //23
+      console.log(parseFloat(str4)); //23.5
+    </script>
+  </body>
+</html>

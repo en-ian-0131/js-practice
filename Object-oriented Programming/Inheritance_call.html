@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Person
+      function Person(named, ages) {
+        this.named = named || "default";
+        this.ages = ages || 0;
+      }
+      Person.prototype.greet = function () {
+        console.log(`Hello greet ${this.named}`);
+      };
+
+      //繼承
+      //Student
+      function Student(name) {
+        Person.call(this, "Ian", 25);
+        this.name = name;
+        this.score = 80;
+      }
+      Student.prototype = new Person();
+      Student.prototype.say = function () {
+        console.log(`Hello ${this.name}`);
+      };
+      let Ian = new Student("John");
+      console.log(Ian.name); //John
+      console.log(Ian.named); //Ian
+      console.log(Ian.ages); //25
+      console.log(Ian.score); //80
+      Ian.greet(); //Hello greet Ian
+      Ian.say(); //Hello John
+    </script>
+  </body>
+</html>

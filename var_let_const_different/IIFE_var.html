@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      (function test() {
+        var aaa = 1;
+      })();
+      //   console.log(a); //undefined 出錯
+      console.log("--------------------------");
+      var bbb = (function test() {
+        var ccc = 123;
+      })();
+      console.log(bbb); //undefined
+      console.log("--------------------------");
+      var whereMing = (function (where) {
+        console.log(where);
+        return where;
+      })("小名在這");
+      console.log(whereMing);
+      console.log("--------------------------");
+      var xxx = 123;
+      (function (argument) {
+        var yyy = 456;
+        console.log(yyy);
+        argument.xxx = 789;
+      })(window);
+      console.log(xxx);
+    </script>
+  </body>
+</html>

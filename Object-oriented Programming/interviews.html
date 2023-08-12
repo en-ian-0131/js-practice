@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Person() {
+        this.a = 1;
+        this.b = 2;
+      }
+      let p1 = new Person();
+      console.log(p1);
+      console.log(Person.prototype);
+      Person.prototype.b = 7;
+      Person.prototype.c = 10;
+      console.log(p1);
+      console.log(p1.a); //1
+      console.log(p1.b); //2
+      console.log(p1.c); //10
+      console.log(p1.d); //undefined
+      console.log(Person.prototype.a);
+      console.log(Person.prototype.b);
+      console.log(Person.prototype.c);
+    </script>
+  </body>
+</html>

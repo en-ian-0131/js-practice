@@ -6,15 +6,12 @@
     <title>Document</title>
   </head>
   <body>
+    <div id="info"></div>
     <script>
-      // function block
-      function fn(a) {
-        var a = 1;
-        console.log(a); //1
-      }
-      fn(3);
-      //因為錯誤沒有被抓到，所以會出錯
-      console.log("a-after:", a); //undefined 出錯
+      //String.prototype
+      const string01 = "abcdefg";
+      const aaa = string01.split("").join(" ");
+      console.log(aaa); //return String
     </script>
   </body>
 </html>

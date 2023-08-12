@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const obj = {
+        n: 3,
+        t: this,
+        f1() {
+          console.log("1:", this); //指向obj
+          //   return this;
+        },
+        f2: () => console.log("2:", this), //如果前面有this，鍵頭函式就會指向誰  //指向window
+        f3() {
+          return () => {
+            console.log("3:", this); //指向obj
+            console.log("4.n:", this.n); //3
+          };
+        },
+      };
+      console.log(obj.t); //window
+      console.log(obj.f1());
+      console.log(obj.f2());
+      console.log(obj.f3()());
+    </script>
+  </body>
+</html>
