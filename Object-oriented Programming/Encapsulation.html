@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+    //   原本寫法
+    //     let aa = 100;
+    //     let bb = 10;
+    //     let cc = 20;
+    //     function start(aa, bb, cc) {
+    //       return aa + bb * cc;
+    //     }
+    //     let sentence = start(aa, bb, cc);
+    //     console.log(sentence);
+
+      //封裝
+      let abc = {
+        aa: 100,
+        bb: 10,
+        cc: 20,
+        start: function () {
+          return this.aa + this.bb * this.cc;
+        },
+      };
+      let sentence = abc.start();
+      console.log(sentence);
+    </script>
+  </body>
+</html>

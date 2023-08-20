@@ -7,14 +7,14 @@
   </head>
   <body>
     <script>
-      // function block
-      function fn(a) {
-        var a = 1;
-        console.log(a); //1
+      //如果沒給預設值可以用 ||
+      function Person(name, age) {
+        this.name = name || "noname";
+        this.age = age || 26;
       }
-      fn(3);
-      //因為錯誤沒有被抓到，所以會出錯
-      console.log("a-after:", a); //undefined 出錯
+
+      const p1 = new Person();
+      console.log("p1:", p1);
     </script>
   </body>
 </html>

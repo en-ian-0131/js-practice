@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var a = 1;
+      function test() {
+        console.log("1:", a); //undefined
+        var a = 7;
+        console.log("2:", a); //7
+        var a;
+        console.log("3:", a); //7
+        inner();
+        function inner() {
+          console.log("4:", a); //7
+          a = 100;
+          b = 200;
+        }
+        console.log("5:", a); //100
+        return a; //跟return 無關
+      }
+      console.log("6:", a); //1
+      test();
+      console.log("6-2:", a); //1
+      a = 70;
+      console.log("7:", a); //70
+      console.log("8:", b); //200
+    </script>
+
+    <!-- 統整重點
+1. 全域是全域，區域是區域，互不影響，跟return無關
+2. 只要var有宣告都會提升
+3.  4是因為閉包
+4. 如果沒宣告，直接賦值，會往外層找
+5. 主要是看宣告在哪
+-->
+  </body>
+</html>

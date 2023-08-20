@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //ES 6 再參數加預設值
+      //this負責儲存
+      function Person(name = "Ian", age = 27) {
+        this.name = name;
+        this.age = age;
+        this.getData = function () {
+          return `Hello ${this.name},${this.age} years old`;
+        };
+      }
+
+      const p1 = new Person();
+      console.log("p1:", p1);
+      console.log("p1.name:", p1.name);
+      console.log("p1.age:", p1.age);
+      console.log("p1.getData:", p1.getData());
+    </script>
+  </body>
+</html>
